@@ -26,7 +26,7 @@ int main(int argc, char **argv){
    //filled_rectangle doos(w, 50, 5, 100, 60);
    //doos.draw();
    
-   my_object mo(w, false);
+   my_object mo(w, true);
    mo.draw();
    
    return 0;
