@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Workspace Name="example code" Database="">
-  <Project Name="Week-1" Path="Week-1/_codelite.project" Active="No"/>
+<CodeLite_Workspace Name="example code" Database="" Version="10.0.0">
+  <Project Name="Week-1" Path="Week-1/_codelite.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Week-1" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix> 
+  </BuildMatrix>
   <Project Name="Week-2" Path="Week-2/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Week-2" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix> 
+  </BuildMatrix>
   <Project Name="Week-3" Path="Week-3/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Week-3" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix> 
+  </BuildMatrix>
   <Project Name="Week-3-2" Path="Week-3-2/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Week-3-2" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix> 
+  </BuildMatrix>
   <Project Name="Week-3-3" Path="Week-3-3/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Week-3-3" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix> 
+  </BuildMatrix>
+  <Project Name="Week-4" Path="Week-4/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="Week-4" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="Week-4-2" Path="Week-4-2/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="Week-4-2" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
 </CodeLite_Workspace>
