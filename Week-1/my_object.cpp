@@ -13,7 +13,7 @@ my_object::my_object (window & w, bool withUnderscore) :
 	withUnderscore (withUnderscore)
 {} 
 
-my_object::draw () {
+void my_object::draw () {
 	if (withUnderscore == true) {
 		fr.draw();
 	}

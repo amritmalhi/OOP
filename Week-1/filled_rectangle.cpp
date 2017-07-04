@@ -8,7 +8,7 @@ filled_rectangle::filled_rectangle( window & w, int start_x, int start_y, int en
 	p_end_y (end_y)
 {}
 
-filled_rectangle::draw(){
+void filled_rectangle::draw(){
 	int i, j;
 	for (i = p_start_x; i < p_end_x; i++) {
 		for (j = p_start_y; j < p_end_y; j++) {

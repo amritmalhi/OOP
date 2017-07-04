@@ -8,7 +8,7 @@
 /// \brief
 /// Vector ADT
 /// \details
-/// This is an ADT that implements a vector that stores the x- and y-values
+/// This is an ADT that implements a vector that stores the x- and y-values.
 class vector {
 private:
     int x;
@@ -55,7 +55,7 @@ public:
     /// \brief   
     /// Monadic addition
     /// \details
-    /// ??
+    /// This operator assigns the rhs vector to the lhs vector.
     vector operator+ ( ) const {
         return vector( x, y );
     }

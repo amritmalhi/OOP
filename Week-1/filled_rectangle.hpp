@@ -5,11 +5,11 @@
 
 class filled_rectangle {
 private:
-	int p_start_x, p_start_y, p_end_x, p_end_y;
 	window & w;
+	int p_start_x, p_start_y, p_end_x, p_end_y;
 public:
 	filled_rectangle(window & w, int p_start_x, int p_start_y, int p_end_x, int p_end_y);
-	draw();
+	void draw();
 };
 
 #endif

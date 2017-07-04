@@ -17,7 +17,7 @@ private:
 	bool withUnderscore;
 public:
 	my_object(window & w, bool withUnderscore);
-	draw();
+	void draw();
 };
 
 #endif
