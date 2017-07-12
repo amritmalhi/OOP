@@ -1,39 +1,15 @@
 #include "hwlib.hpp"
 
-void sequence( hwlib::pin_out & p1, hwlib::pin_out & p2, hwlib::pin_out & p3, hwlib::pin_out & p4){
-	for(;;){
-		p1.set(1);
-		p2.set(1);
-		p3.set(0);
-		p3.set(0);
-		
-		hwlib::wait_ms(500);
-		
-		p1.set(0);
-		p2.set(1);
-		p3.set(1);
-		p4.set(0);
-		
-		hwlib::wait_ms(500);
-		
-		p1.set(0);
-		p2.set(0);
-		p3.set(1);
-		p4.set(1);
-		
-		hwlib::wait_ms(500);
-		
-		p1.set(0);
-		p2.set(1);
-		p3.set(1);
-		p4.set(0);
-		
-		hwlib::wait_ms(500);
-		
-		p1.set(1);
-		p2.set(1);
-		p3.set(0);
-		p4.set(0);
+void sequence ( auto & leds, int ms = 150) {
+	for (;;) {
+		for (unsigned int i = 0; i < leds.number_of_pins() - 1; i++) {
+			leds.set(0x03 << i);
+			hwlib::wait_ms(ms);
+		}
+		for (unsigned int i = leds.number_of_pins() - 2; i > 0; i--) {
+			leds.set(0x03 << i);
+			hwlib::wait_ms(ms);
+		}
 	}
 }
 
@@ -44,10 +20,12 @@ int main( void ){
 	namespace target = hwlib::target;
 	
 	auto led0 = target::pin_out( target::pins::d7 );
-	auto led1 = target::pin_out( target::pins::d6 );
-	auto led2 = target::pin_out( target::pins::d5 );
-	auto led3 = target::pin_out( target::pins::d4 );
+	auto led1 = target::pin_out( target::pins::d8 );
+	auto led2 = target::pin_out( target::pins::d9 );
+	auto led3 = target::pin_out( target::pins::d10 );
+	auto led4 = target::pin_out( target::pins::d11 );
 	
-	sequence( led0, led1, led2, led3 );
+	auto leds = hwlib::port_out_from_pins( led0, led1, led2, led3, led4 );
+    ::sequence( leds );
 	
 }
