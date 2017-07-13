@@ -1,44 +1,28 @@
 #include "hwlib.hpp"
 
-void counter ( hwlib::pin_out & led0, hwlib::pin_out & led1, hwlib::pin_out & led2, hwlib::pin_out & led3, auto more, auto less ){
-	int counter = 0;
+void sequence (auto & leds, auto & plus, auto & minus, int ms = 200) {
+	
+	unsigned int pattern = 0x0;
+	// Only supports up to 8 leds because of this mask.
+	unsigned int mask = 0xFF;
+	unsigned int counter = 0;
+	
 	for (;;) {
-	if (more.get() == 0 && counter <= 4) {
-		counter++;
-	} 
-	
-	if (less.get() == 0 && counter != 0) {
-		counter--;
+
+		if (!plus.get() && counter < leds.number_of_pins()) {
+			counter++;
+			
+			
+		} else if (!minus.get() && counter != 0) {
+			counter--;
+		}
+		
+		pattern = mask << (leds.number_of_pins() - counter);
+		leds.set(pattern);
+		
+		hwlib::wait_ms(ms);
 	}
 	
-	if (counter == 0) {
-		led0.set(0);
-		led1.set(0);
-		led2.set(0);
-		led3.set(0);
-	} else if (counter == 1) {
-		led0.set(1);
-		led1.set(0);
-		led2.set(0);
-		led3.set(0);
-	} else if (counter == 2) {
-		led0.set(1);
-		led1.set(1);
-		led2.set(0);
-		led3.set(0);
-	} else if (counter == 3) {
-		led0.set(1);
-		led1.set(1);
-		led2.set(1);
-		led3.set(0);
-	} else if (counter == 4) {
-		led0.set(1);
-		led1.set(1);
-		led2.set(1);
-		led3.set(1);
-	}
-	hwlib::wait_ms(150);
-	}
 }
 
 int main( void ){
@@ -51,11 +35,14 @@ int main( void ){
 	auto p1 = target::pin_out( target::pins::d6 );
 	auto p2 = target::pin_out( target::pins::d5 );
 	auto p3 = target::pin_out( target::pins::d4 );
+	auto p4 = target::pin_out( target::pins::d3 );
 	
 	auto sw0 = target::pin_in( target::pins::d13 );
 	auto sw1 = target::pin_in( target::pins::d12 );
 	
-	counter( p0, p1, p2, p3, sw0, sw1 );
+	auto leds = hwlib::port_out_from_pins (p0, p1, p2, p3, p4);
+	
+	::sequence( leds, sw0, sw1 );
 	
 	return 0;
 }

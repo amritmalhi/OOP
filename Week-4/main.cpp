@@ -19,11 +19,11 @@ int main( void ){
 	
 	namespace target = hwlib::target;
 	
-	auto led0 = target::pin_out( target::pins::d7 );
-	auto led1 = target::pin_out( target::pins::d8 );
-	auto led2 = target::pin_out( target::pins::d9 );
-	auto led3 = target::pin_out( target::pins::d10 );
-	auto led4 = target::pin_out( target::pins::d11 );
+	auto led0 = target::pin_out( target::pins::d3 );
+	auto led1 = target::pin_out( target::pins::d4 );
+	auto led2 = target::pin_out( target::pins::d5 );
+	auto led3 = target::pin_out( target::pins::d6 );
+	auto led4 = target::pin_out( target::pins::d7 );
 	
 	auto leds = hwlib::port_out_from_pins( led0, led1, led2, led3, led4 );
     ::sequence( leds );
